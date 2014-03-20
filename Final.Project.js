@@ -18,8 +18,17 @@ if (Meteor.isClient) {
                  mapTypeId: google.maps.MapTypeId.ROADMAP
              };
 //Launch Map 
+       var options = {
+             enableHighAccuracy: true,
+             timeout: 5000,
+             maximumAge: 0
+        };
          map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-         var watchId = navigator.geolocation.watchPosition(centerMap); 
+         var watchId = navigator.geolocation.watchPosition(centerMap, error, options);
+//Error
+        function error() {
+        console.log("Cannot Find Location");
+        };
 //Watcher
  function centerMap(location)
 {
