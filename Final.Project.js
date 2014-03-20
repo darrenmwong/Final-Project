@@ -17,12 +17,36 @@ if (Meteor.isClient) {
                  },
                  mapTypeId: google.maps.MapTypeId.ROADMAP
              };
+//Launch Map 
          map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+         var watchId = navigator.geolocation.watchPosition(centerMap); 
+//Watcher
+ function centerMap(location)
+{
+var myLatlng = new google.maps.LatLng(location.coords.latitude,location.coords.longitude);
+map.setCenter(myLatlng);
+map.setZoom(15);
+
+    $("#lat").text("Latitude : " + location.coords.latitude);
+    $("#lon").text("Longitude : " + location.coords.longitude);
+    //show current location on map
+    marker = new google.maps.Marker({
+    position: myLatlng,
+    map: map,
+    zIndex:1
+    });
+
+navigator.geolocation.clearWatch(watchId);
+
+ }
+//Sets Marker
+
         var marker = new google.maps.Marker({
               position: coords,
               title: 'Your Location',
               map: map
          });
+
 
 //Radius around current location
 
@@ -38,33 +62,7 @@ if (Meteor.isClient) {
          };
         cityCircle = new google.maps.Circle(sunCircle)
         cityCircle.bindTo('center', marker, 'position');
-        function autoUpdate() {
-             navigator.geolocation.getCurrentPosition(function(position) {  
-             var newPoint = new google.maps.LatLng(position.coords.latitude, 
-                                          position.coords.longitude);
-
-             if (marker) {
-              // Marker already created - Move it
-             marker.setPosition(newPoint);
-             }
-            else {
-             // Marker does not exist - Create it
-             marker = new google.maps.Marker({
-             position: newPoint,
-             map: map
-             });
-           }
-
-            // Center the map on the new position
-             map.setCenter(newPoint);
-             }); 
-
-           // Call the autoUpdate() function every 5 seconds
-             setTimeout(autoUpdate, 5000);
-            }
-
-            autoUpdate();
-    
+ 
        });
      }
    }; 
