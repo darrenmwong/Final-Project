@@ -10,7 +10,7 @@ if (Meteor.isClient) {
   //   var directionsDisplay = new google.maps.DirectionsRenderer();
      var mapOptions = //Sets map options
      {
-       zoom: 15,  //Sets zoom level (0-21)
+       zoom: 18,  //Sets zoom level (0-21)
        center: coords, //zoom in on users location
        mapTypeControl: true, //allows you to select map type eg. map or satellite
        navigationControlOptions:
