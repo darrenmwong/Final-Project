@@ -9,3 +9,7 @@ insecure
 preserve-inputs
 bootstrap
 underscore
+accounts-facebook
+accounts-google
+accounts-twitter
+jquery
