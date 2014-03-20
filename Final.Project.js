@@ -2,10 +2,10 @@ if (Meteor.isClient) {
 
   Template.mapPost.rendered = function() {
     if (navigator.geolocation) { //Checks if browser supports geolocation
-        navigator.geolocation.getCurrentPosition(function (position) {                                                              //This gets the
-     var latitude = position.coords.latitude;                    //users current
-     var longitude = position.coords.longitude;                 //location
-     var coords = new google.maps.LatLng(latitude, longitude); //Creates variable for map coordinates
+        navigator.geolocation.getCurrentPosition(function (position) {                                                              
+     var latitude = position.coords.latitude;                    
+     var longitude = position.coords.longitude;                 
+     var coords = new google.maps.LatLng(latitude, longitude); 
    //  var directionsService = new google.maps.DirectionsService();
   //   var directionsDisplay = new google.maps.DirectionsRenderer();
      var mapOptions = //Sets map options
@@ -20,6 +20,11 @@ if (Meteor.isClient) {
        mapTypeId: google.maps.MapTypeId.ROADMAP //sets type of map Options:ROADMAP, SATELLITE, HYBRID, TERRIAN
      };
      map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+     var marker = new google.maps.Marker({
+              position: coords,
+              title: 'Your Location',
+              map: map
+            });
     // directionsDisplay.setMap(map);
     // directionsDisplay.setPanel(document.getElementById('panel'));
     // var request = {
