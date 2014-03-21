@@ -2,28 +2,28 @@ if (Meteor.isClient) {
 
   Template.mapPost.rendered = function() {
     if (navigator.geolocation) { //Checks if browser supports geolocation
-        navigator.geolocation.getCurrentPosition(function (position) {                                                              
-        var latitude = position.coords.latitude;                    
-        var longitude = position.coords.longitude;                 
-        var coords = new google.maps.LatLng(latitude, longitude); 
-        var mapOptions = //Sets map options
-             {
-                 zoom: 15,  //Sets zoom level (0-21)
-                 center: coords, //zoom in on users location
-                 mapTypeControl: true, //allows you to select map type eg. map or satellite
-                 navigationControlOptions:
-                 {
-                 style: google.maps.NavigationControlStyle.SMALL //sets map controls size eg. zoom
-                 },
-                 mapTypeId: google.maps.MapTypeId.ROADMAP
-             };
+       // navigator.geolocation.watchPosition(function (position) {                                                              
+       // var latitude = position.coords.latitude;                    
+       // var longitude = position.coords.longitude;                 
+       // var coords = new google.maps.LatLng(latitude, longitude); 
+       // var mapOptions = //Sets map options
+       //      {
+       //          zoom: 15,  //Sets zoom level (0-21)
+       //          center: coords, //zoom in on users location
+       //          mapTypeControl: true, //allows you to select map type eg. map or satellite
+       //          navigationControlOptions:
+       //          {
+       //          style: google.maps.NavigationControlStyle.SMALL //sets map controls size eg. zoom
+        //         },
+        //         mapTypeId: google.maps.MapTypeId.ROADMAP
+        //     };
 //Launch Map 
        var options = {
              enableHighAccuracy: true,
-             timeout: 5000,
-             maximumAge: 0
+             timeout: 60000,
+             maximumAge: 5000
         };
-         map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+         map = new google.maps.Map(document.getElementById("map-canvas"), watchId);
          var watchId = navigator.geolocation.watchPosition(centerMap, error, options);
 //Error
         function error() {
@@ -44,15 +44,15 @@ if (Meteor.isClient) {
 
         navigator.geolocation.clearWatch(watchId);
 
- }
+        }
 //Sets Marker
         var im = "http://www.robotwoods.com/dev/misc/bluecircle.png"
-        var marker = new google.maps.Marker({
-              position: coords,
-              title: 'Your Location',
-              map: map,
-              icon: im
-         });
+    //    var marker = new google.maps.Marker({
+    //          position: coords,
+    //          title: 'Your Location',
+    //          map: map,
+    //          icon: im
+    //     });
 //Geolocation Marker
 
 //Radius around current location
@@ -70,7 +70,7 @@ if (Meteor.isClient) {
         cityCircle = new google.maps.Circle(sunCircle)
         cityCircle.bindTo('center', marker, 'position');
  
-       });
+     //  });
      }
    }; 
 
