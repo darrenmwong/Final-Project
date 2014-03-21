@@ -11,17 +11,26 @@ body {
 #map-canvas {
   height: 100%;
   top: -5%;
-  z-index: 100;
+  z-index: 1;
+  position: relative;
 }
 
 #map-flow {
 }
 
 #navBarContainer {
-  z-index: 200;
-  border: solid 1px #ccc;
-  position: relative; 
-
+  background-color:#333; 
+  width: 425px;
+  position:fixed;
+  top:0px;
+  left:0px;
+  font-weight:300;
+  color:#333;
+  height:5%;
+  z-index:2;
+  color: orange;
+  margin-top:0;
+  text-align:center;  
 }
 .navbar .nav,
 .navbar .nav > li {
