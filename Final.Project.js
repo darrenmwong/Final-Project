@@ -27,35 +27,33 @@ if (Meteor.isClient) {
          var watchId = navigator.geolocation.watchPosition(centerMap, error, options);
 //Error
         function error() {
-        console.log("Cannot Find Location");
         };
 //Watcher
- function centerMap(location)
-{
-var myLatlng = new google.maps.LatLng(location.coords.latitude,location.coords.longitude);
-map.setCenter(myLatlng);
-map.setZoom(15);
-
-    $("#lat").text("Latitude : " + location.coords.latitude);
-    $("#lon").text("Longitude : " + location.coords.longitude);
+        function centerMap(location) {
+            var myLatlng = new google.maps.LatLng(location.coords.latitude,location.coords.longitude);
+                map.setCenter(myLatlng);
+                map.setZoom(15);
+                $("#lat").text("Latitude : " + location.coords.latitude);
+                $("#lon").text("Longitude : " + location.coords.longitude);
     //show current location on map
-    marker = new google.maps.Marker({
-    position: myLatlng,
-    map: map,
-    zIndex:1
-    });
+                marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                icon: im
+         });
 
-navigator.geolocation.clearWatch(watchId);
+        navigator.geolocation.clearWatch(watchId);
 
  }
 //Sets Marker
-
+        var im = "http://www.robotwoods.com/dev/misc/bluecircle.png"
         var marker = new google.maps.Marker({
               position: coords,
               title: 'Your Location',
-              map: map
+              map: map,
+              icon: im
          });
-
+//Geolocation Marker
 
 //Radius around current location
 
