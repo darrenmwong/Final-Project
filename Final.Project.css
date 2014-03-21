@@ -9,6 +9,26 @@ body {
 }
 
 #map-canvas {
-  height: 100%
+  height: 100%;
+  top: -5%;
+  z-index: 100;
 }
 
+#map-flow {
+}
+
+#navBarContainer {
+  z-index: 200;
+  border: solid 1px #ccc;
+  position: relative; 
+
+}
+.navbar .nav,
+.navbar .nav > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+    *zoom:1; /* hasLayout ie7 trigger */
+    vertical-align: top;
+
+}
