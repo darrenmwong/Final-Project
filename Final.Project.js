@@ -77,18 +77,33 @@ if (Meteor.isClient) {
             }
 
             function setCurrentPosition(pos) {
+              var im = "http://www.robotwoods.com/dev/misc/bluecircle.png"
+
                 currentPositionMarker = new google.maps.Marker({
                     map: map,
                     position: new google.maps.LatLng(
                         pos.coords.latitude,
                         pos.coords.longitude
                     ),
-                    title: "Current Position"
+                    title: "You are here",
                 });
                 map.panTo(new google.maps.LatLng(
                         pos.coords.latitude,
                         pos.coords.longitude
                     ));
+              var sunCircle = {
+                  strokeColor: "#19A3D1",
+                  strokeOpacity: 0.8,
+                  strokeWeight: 2,
+                  fillColor: "#19A3D1",
+                  fillOpacity: 0.35,
+                  map: map,
+                  center: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude ),
+                  radius: 804.672 // in meters
+             };
+                  cityCircle = new google.maps.Circle(sunCircle)
+                 cityCircle.bindTo('center', currentPositionMarker, 'position');
+
             }
 
             function displayAndWatch(position) {
