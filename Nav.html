@@ -3,16 +3,20 @@
 <a href=# class="menu-toggle"><img src="http://i.imgur.com/bjbb48P.png"></a>
 </div>
 <div id="navBarContainer">
-<title>Nav Bar Goes Here</title>
-<nav>
-<ul>
-  <li class="sign-in"> Sign In </li>
-  <li id="sign-up"> Sign Up </li>
-  <li> Profile </li>
-  <li> Report </li>
-  <li> About </li>
-</ul>
-</nav>
+  <nav>
+    <ul class="nav center">
+      {{#if currentUser}}
+        <li>Profile </li>
+        <li>Alert</li>
+        <li>Log Out</li>
+        <li>Contact</li>
+        
+      {{else}}
+        <li>Sign Up</li>
+        <li>Sign In</li> 
+      {{/if}}
+    </ul>
+  </nav>
 </div>
  </template>
 

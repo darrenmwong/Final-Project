@@ -11,6 +11,7 @@ if (Meteor.isClient) {
           if (err) {
             // Inform the user that account creation failed
           } else {
+            console.log("created " + email);
             // Success. Account has been created and the user
             // has logged in successfully. 
           }
