@@ -13,3 +13,5 @@ accounts-facebook
 accounts-google
 accounts-twitter
 jquery
+accounts-base
+accounts-password

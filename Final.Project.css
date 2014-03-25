@@ -10,7 +10,7 @@ body {
 
 #map-canvas {
   height: 100%;
-  top: -5%;
+  top: -2%;
   z-index: 1;
   position: relative;
 }
@@ -23,14 +23,23 @@ body {
   width: 425px;
   position:fixed;
   top:0px;
-  left:0px;
+  right:0px;
   font-weight:300;
   color:#333;
-  height:5%;
+  height:100%;
+  opacity: .8;
   z-index:2;
-  color: orange;
+  color: white;
   margin-top:0;
   text-align:center;  
+}
+.menu-border {
+  max-width: 30px;
+  max-height: 30px;
+  z-index: 3;
+  position: fixed;
+  right:0px 
+
 }
 .navbar .nav,
 .navbar .nav > li {
@@ -40,4 +49,11 @@ body {
     *zoom:1; /* hasLayout ie7 trigger */
     vertical-align: top;
 
+}
+.toggle_btn {
+  position:fixed;
+  top:25px;
+  right:25px;
+  opacity:0.8;
+  z-index: 5;
 }

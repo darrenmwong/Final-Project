@@ -65,7 +65,7 @@ if (Meteor.isClient) {
             function initializeMap()
             {
                 map = new google.maps.Map(document.getElementById('map-canvas'), {
-                   zoom: 13,
+                   zoom: 18,
                    center: mapCenter,
                    mapTypeId: google.maps.MapTypeId.ROADMAP
                  });
@@ -120,6 +120,7 @@ if (Meteor.isClient) {
                             currentPositionMarker,
                             position
                         );
+                    console.log("changed position");
                     });
             }
 
@@ -132,9 +133,14 @@ if (Meteor.isClient) {
             }
 
             function initLocationProcedure() {
+                 var options = {
+                   enableHighAccuracy: true,
+                   timeout: 60000,
+                   maximumAge: 1000
+                }
                 initializeMap();
                 if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(displayAndWatch, locError);
+                    navigator.geolocation.getCurrentPosition(displayAndWatch, locError, options);
                 } else {
                     alert("Your browser does not support the Geolocation API");
                 }
