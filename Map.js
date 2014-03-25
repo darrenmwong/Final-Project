@@ -65,7 +65,7 @@ if (Meteor.isClient) {
             function initializeMap()
             {
                 map = new google.maps.Map(document.getElementById('map-canvas'), {
-                   zoom: 18,
+                   zoom: 15,
                    center: mapCenter,
                    mapTypeId: google.maps.MapTypeId.ROADMAP
                  });
