@@ -14,7 +14,14 @@ Template.menu.events({
     },
 
     'click #profile' : function() {
-        console.log('render function of profile');
+        if (document.getElementById("profile-page")) { 
+            $('#profile-page').remove(); 
+            console.log('deleted dom element profile-page');
+           }     
+        else {
+             console.log('render of profile');
+             $("body").prepend(Template.profile);
+             }
     },
     
     'click #log-out' : function() {
