@@ -1,5 +1,5 @@
 if (Meteor.isClient) {
-Template.menu.events({
+   Template.menu.events({
 
     'click .menu-toggle' : function() {
         console.log('clicked toggle menu');
@@ -8,9 +8,14 @@ Template.menu.events({
     },
 
     'click #sign-up' : function() {
-        var signUp = Meteor.render('register');
-        console.log('render sign-up');
-        console.log(signUp);
+        if (document.getElementById('signup-form')) {
+        $('#signup-form').remove();
+        }
+        
+        else {
+         console.log('render sign-up');
+         $("body").prepend(Template.signup);
+        }
     },
 
     'click #profile' : function() {
@@ -25,6 +30,13 @@ Template.menu.events({
     },
     
     'click #log-out' : function() {
+        Meteor.logout(function(err) {
+         if (err) {
+            //show error message
+         } else {
+            //show alert that says logged out
+         }
+       }); 
         console.log('clicked log-out');
     },
 
@@ -35,9 +47,7 @@ Template.menu.events({
     'click #alert' : function() {
         console.log('clicked alert');
     }
- //   'click #log-out' : function() {
- //   };
-});
+  });
 
 };
 
