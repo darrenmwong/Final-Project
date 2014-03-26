@@ -53,7 +53,11 @@ if (Meteor.isClient) {
             $('body').prepend(Template.alertTemplate);
         console.log('clicked alert');
         }
-     }
+     },
+
+    'click #alert-submit' : function() {
+       console.log('clicked alert-submit');
+    }  
   });
 
 };
