@@ -18,7 +18,7 @@ body {
 #map-flow {
 }
 
-#navBarContainer {
+.navBarContainer {
   background-color:#333; 
   width: 425px;
   position:fixed;
@@ -32,6 +32,13 @@ body {
   color: white;
   margin-top:0;
   text-align:center;  
+  transition: .5s all ease;
+}
+
+
+.shift {
+  margin-right: -200%;
+  
 }
 .menu-border {
   max-width: 30px;

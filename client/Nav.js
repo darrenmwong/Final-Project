@@ -2,8 +2,8 @@ if (Meteor.isClient) {
    Template.menu.events({
 
     'click .menu-toggle' : function() {
+        $(".navBarContainer").toggleClass('shift');
         console.log('clicked toggle menu');
-        $('.menu-border'._id).slideUp('slow');
         console.log('WORKING AS INTENDED');
     },
 
