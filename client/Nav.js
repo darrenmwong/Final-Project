@@ -46,8 +46,14 @@ if (Meteor.isClient) {
     },
 
     'click #alert' : function() {
+        if (document.getElementById('alert-form')) {
+            $('#alert-form').remove();
+        }
+        else {
+            $('body').prepend(Template.alertTemplate);
         console.log('clicked alert');
-    }
+        }
+     }
   });
 
 };
