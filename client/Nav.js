@@ -42,7 +42,11 @@ if (Meteor.isClient) {
             UsersInR.push(fetch[i].id);
         }; 
     }
-        console.log(UsersInR);
+        console.log(UsersInR)
+    for(var i=0; i < UsersInR.length; i++) {
+       var a =  Alerts.insert({id: UsersInR[i], description: des})
+    
+    }
     
         
              
