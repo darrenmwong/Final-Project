@@ -7,17 +7,6 @@ if (Meteor.isClient) {
         console.log('WORKING AS INTENDED');
     },
 
-//    'click #sign-up' : function() {
-//        if (document.getElementById('signup-form')) {
-//        $('#signup-form').remove();
-//        }
-//        
-//        else {
-//         console.log('render sign-up');
-//         $("body").prepend(Template.signup);
-//        }
-//    },
-
     'click #profile' : function() {
         if (document.getElementById("profile-page")) { 
 
@@ -51,14 +40,19 @@ if (Meteor.isClient) {
         }
         else {
             $('body').prepend(Template.alertTemplate);
-        console.log('clicked alert');
+            console.log('clicked alert');
+            $('#alertSubmit').click(function() {
+            console.log('clicked');
+             var des = $('#alertDescription').val();
+            console.log(des);
+    });
+ 
         }
-     },
+     }
 
-    'click #alert-submit' : function() {
-       console.log('clicked alert-submit');
-    }  
   });
+    
+   
 
 };
 
