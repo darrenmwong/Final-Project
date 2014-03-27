@@ -1,12 +1,14 @@
 if (Meteor.isClient) {
 
  alertSubmit = function() {
-    console.log('hi');
+    var UsersInR = [];
     var des = $('#alertDescription').val();
     console.log(des);
-
     var woot = Profile.findOne({id: Meteor.userId()});
         console.log(woot.coords);
+    var profile = Profile.find();
+    var fetch = profile.fetch();
+        console.log(fetch);
 //        if(navigator.geolocation) {
 //            navigator.geolocation.getCurrentPosition(function(position) {
 //            console.log('geolocation is on');
