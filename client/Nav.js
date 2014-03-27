@@ -1,4 +1,23 @@
 if (Meteor.isClient) {
+
+ alertSubmit = function() {
+    console.log('hi');
+    var des = $('#alertDescription').val();
+    console.log(des);
+
+    var woot = Profile.findOne({id: Meteor.userId()});
+        console.log(woot.coords);
+//        if(navigator.geolocation) {
+//            navigator.geolocation.getCurrentPosition(function(position) {
+//            console.log('geolocation is on');
+//        var center = position.coords;  
+//            console.log(point);
+//            });
+    
+        
+             
+    };
+
    Template.menu.events({
 
     'click .menu-toggle' : function() {
@@ -40,11 +59,10 @@ if (Meteor.isClient) {
         }
         else {
             $('body').prepend(Template.alertTemplate);
-            console.log('clicked alert');
-            $('#alertSubmit').click(function() {
-            console.log('clicked');
-             var des = $('#alertDescription').val();
-            console.log(des);
+             $('#alertSubmit').click(function() {
+                         alertSubmit();
+                
+            
     });
  
         }
