@@ -23,7 +23,6 @@ if (Meteor.isClient) {
     var UsersInR = [];
     var distance = 0.402336; //.25 miles in KM
     var des = $('#alertDescription').val();
-    console.log(des);
 // finding user profile and getting the longitude latitude of the user
     var woot = Profile.findOne({id: Meteor.userId()});
     var centerlng = woot.coords.k;
@@ -34,12 +33,15 @@ if (Meteor.isClient) {
         console.log(fetch);
 // Looping through all profiles
     for(var i=0; i < fetch.length; i++) {
+        if(woot.id === fetch[i].id) {
+        } else {
          var lng = fetch[i].coords.k;
          var lat = fetch[i].coords.A;
          var between = getDistanceBetween(centerlat, centerlng, lat, lng);
 // Checks if distance between is less then .25 mile radius
-         if(between <= distance) {
-            UsersInR.push(fetch[i].id);
+              if(between <= distance) {
+                  UsersInR.push(fetch[i].id);
+        }
         }; 
     }
         console.log(UsersInR)
@@ -93,14 +95,15 @@ if (Meteor.isClient) {
         }
         else {
             $('body').prepend(Template.alertTemplate);
-             $('#alertSubmit').click(function() {
+             $('#alertSubmit').click(function(e) {
+                    e.preventDefault();
                          alertSubmit();
-                
-            
+            $('#alert-form').remove();
     });
  
         }
      }
+
 
   });
     

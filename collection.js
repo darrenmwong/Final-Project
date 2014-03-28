@@ -1,1 +1,2 @@
-Darren = new Meteor.Collection('darren');
+Profile = new Meteor.Collection('profile');
+Alerts = new Meteor.Collection('alerts');

@@ -1,3 +1,15 @@
 <template name="alertProfile">
-  HANDLE BARS TEMPLATE MOTHA FUCKA
+  <div class="alertContainer"> 
+   <div id="alertDescription">
+
+    </div>
+    <button onclick="alertDesClose()">Close</button>
+</div>
+<script>
+  function alertDesClose() {
+    $('.alertContainer').remove();
+    console.log('closing');
+};
+</script>
 </template>
+  

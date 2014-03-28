@@ -61,6 +61,8 @@ if (Meteor.isClient) {
                 currentPositionMarker,
                 mapCenter = new google.maps.LatLng(40.700683, -73.925972),
                 map;
+             
+   
 
             function initializeMap()
             {
@@ -103,7 +105,6 @@ if (Meteor.isClient) {
              };
                   cityCircle = new google.maps.Circle(sunCircle)
                  cityCircle.bindTo('center', currentPositionMarker, 'position');
-
             }
 
             function displayAndWatch(position) {
@@ -121,7 +122,26 @@ if (Meteor.isClient) {
                             position
                         );
                     console.log("changed position");
-                    });
+                var myLatlng = new google.maps.LatLng(
+                        position.coords.latitude,
+                        position.coords.longitude
+                        );
+
+  //                  console.log(myLatlng);
+  //                  Meteor.call('savePosition', this._id, {coords : myLatlng});
+
+            if(Profile.findOne({id: Meteor.userId()})) {
+            
+             Profile.update({_id: this._id}, {$set: { coords: myLatlng}});
+
+            }
+            else {
+
+             Profile.insert({id: Meteor.userId() , coords: myLatlng });
+
+            } 
+             
+            });
             }
 
             function setMarkerPosition(marker, position) {
@@ -145,6 +165,7 @@ if (Meteor.isClient) {
                     alert("Your browser does not support the Geolocation API");
                 }
             }
+            
 
             $(document).ready(function() {
                 initLocationProcedure();
@@ -152,9 +173,4 @@ if (Meteor.isClient) {
 
 }
 }
-}
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
 }
