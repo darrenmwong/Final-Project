@@ -47,7 +47,7 @@ if (Meteor.isClient) {
                   fillOpacity: 0.35,
                   map: map,
                   center: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude ),
-                  radius: 804.672 // in meters
+                  radius: 402.336 // in meters
              };
                   cityCircle = new google.maps.Circle(sunCircle)
                  cityCircle.bindTo('center', currentPositionMarker, 'position');
