@@ -34,6 +34,7 @@ if (Meteor.isClient) {
                         pos.coords.longitude
                     ),
                     title: "You are here",
+                    icon: im
                 });
                 map.panTo(new google.maps.LatLng(
                         pos.coords.latitude,

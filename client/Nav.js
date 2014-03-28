@@ -58,19 +58,20 @@ if (Meteor.isClient) {
 
     'click .menu-toggle' : function() {
         $(".navBarContainer").toggleClass('shift');
-        console.log('clicked toggle menu');
-        console.log('WORKING AS INTENDED');
     },
 
     'click #profile' : function() {
         if (document.getElementById("profile-page")) { 
 
             $('#profile-page').remove(); 
-            console.log('deleted dom element profile-page');
            }     
         else {
              console.log('render of profile');
              $("body").prepend(Template.profile);
+                $('#submit-profile').click(function(e) {
+                    e.preventDefault();
+                    
+                }); 
              }
     },
     
@@ -82,11 +83,9 @@ if (Meteor.isClient) {
             //show alert that says logged out
          }
        }); 
-        console.log('clicked log-out');
     },
 
     'click #contact' : function() {
-        console.log('clicked contact');
     },
 
     'click #alert' : function() {

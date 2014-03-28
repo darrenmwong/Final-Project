@@ -95,16 +95,22 @@ padding-top: 30px;
   z-index: 5;
 }
 .alertContainer {
-  z-index: 5;
+   z-index: 5;
   position: absolute;
   left: 40%;
-  top: 20%;
+  top: 25%;
+  width: 150px;
+  max-width: 150px;
   text-align: center;
   color: white;
-  max-width: 40%;
-  max-height: 40%;
   background: grey;
   border: 2px solid white;
+  padding: 10px;
+
+
+  }
+#alertDescription {
+  padding: 5px;
 }
 
 #alert-form {
@@ -132,9 +138,11 @@ max-width: 140px;
   position: absolute;
   left: 40%;
   text-align: center;
-  max-width: 20%;
-  max-height: 20%;
-  background: white;
+  top: 25%;
+  padding: 15px;
+  background: grey;
+  border: 1px solid white;
+  color: white;
 }
-
+ 
 
