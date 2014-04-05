@@ -1,0 +1,148 @@
+html {
+  height: 100%; 
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map-canvas {
+  height: 100%;
+  top: -2%;
+  z-index: 1;
+  position: relative;
+}
+
+#map-flow {
+}
+
+.navBarContainer {
+  background-color:#333; 
+  width: 260px;
+  position:fixed;
+  top:0px;
+  right:0px;
+  font-weight:100;
+  color:#333;
+  text-decoration: none;
+  height:100%;
+  opacity: .8;
+  z-index:2;
+  color: white;
+  margin-top:0;
+  text-align:center;  
+  transition: .6s all ease;
+}
+
+
+a:link {color:#FFFFFF;}      /* unvisited link */
+a:visited {color:#FFFFFF;}  /* visited link */
+a:hover {color:#008FB2;}  /* mouse over link */
+a:active {color:#008FB2;}  /* selected link */
+
+
+.navBarContainer .navCenter,
+.navBarContainer .navCenter > li > a {
+  text-decoration: none; 
+  list-style-type: none; 
+  
+
+}
+.nav > li > a {
+  font-size: 30px;
+  padding: 16px;
+
+
+
+}
+
+
+.shift {
+  margin-right: -200%;
+  
+}
+.menu-border {
+  max-width: 48px;
+  z-index: 3;
+  position: fixed;
+  right: 0px;
+  padding-left: 10px;
+  padding-top: 0px;
+}
+
+
+.nav {
+
+padding-top: 30px;
+
+}
+.navbar .nav,
+.navbar .nav > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+    *zoom:1; /* hasLayout ie7 trigger */
+    vertical-align: top;
+
+}
+.toggle_btn {
+  position:fixed;
+  top:25px;
+  right:25px;
+  opacity:0.8;
+  z-index: 5;
+}
+.alertContainer {
+   z-index: 5;
+  position: absolute;
+  left: 40%;
+  top: 25%;
+  width: 150px;
+  max-width: 150px;
+  text-align: center;
+  color: white;
+  background: grey;
+  border: 2px solid white;
+  padding: 10px;
+
+
+  }
+#alertDescription {
+  padding: 5px;
+}
+
+#alert-form {
+  z-index: 5;
+  position: absolute;
+  left: 35%;
+  top: 25%;
+  max-width: 150px;
+  text-align: center;
+  color: white;
+  background: grey;
+  border: 2px solid white;
+  padding: 10px;
+
+}
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+
+max-width: 140px;
+
+}
+
+#profileForm {
+  z-index: 40;
+  position: absolute;
+  left: 40%;
+  text-align: center;
+  top: 25%;
+  padding: 15px;
+  background: grey;
+  border: 1px solid white;
+  color: white;
+}
+ 
+
