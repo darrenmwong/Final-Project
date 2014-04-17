@@ -7,13 +7,11 @@ if (Meteor.isClient) {
                 currentPositionMarker,
                 mapCenter = new google.maps.LatLng(40.700683, -73.925972),
                 map;
-             
-   
 
             function initializeMap()
             {
                 map = new google.maps.Map(document.getElementById('map-canvas'), {
-                   zoom: 15,
+                   zoom: 16,
                    center: mapCenter,
                    mapTypeId: google.maps.MapTypeId.ROADMAP
                  });
@@ -25,7 +23,7 @@ if (Meteor.isClient) {
             }
 
             function setCurrentPosition(pos) {
-              var im = "http://www.robotwoods.com/dev/misc/bluecircle.png"
+              var im = "http://i.imgur.com/TJqBMd9.png"
 
                 currentPositionMarker = new google.maps.Marker({
                     map: map,
@@ -40,7 +38,7 @@ if (Meteor.isClient) {
                         pos.coords.latitude,
                         pos.coords.longitude
                     ));
-              var sunCircle = {
+            /*  var sunCircle = {
                   strokeColor: "#19A3D1",
                   strokeOpacity: 0.8,
                   strokeWeight: 2,
@@ -51,7 +49,7 @@ if (Meteor.isClient) {
                   radius: 402.336 // in meters
              };
                   cityCircle = new google.maps.Circle(sunCircle)
-                 cityCircle.bindTo('center', currentPositionMarker, 'position');
+                 cityCircle.bindTo('center', currentPositionMarker, 'position'); */
             }
 
             function displayAndWatch(position) {

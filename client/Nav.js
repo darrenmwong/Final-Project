@@ -30,7 +30,6 @@ if (Meteor.isClient) {
 // finding ALL users and putting them into an array using fetch
     var profile = Profile.find();
     var fetch = profile.fetch();
-        console.log(fetch);
 // Looping through all profiles
     for(var i=0; i < fetch.length; i++) {
         if(woot.id === fetch[i].id) {
@@ -44,7 +43,6 @@ if (Meteor.isClient) {
         }
         }; 
     }
-        console.log(UsersInR)
     for(var i=0; i < UsersInR.length; i++) {
        var a =  Alerts.insert({id: UsersInR[i], description: des})
     

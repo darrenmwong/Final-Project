@@ -116,14 +116,15 @@ padding-top: 30px;
 #alert-form {
   z-index: 5;
   position: absolute;
-  left: 35%;
-  top: 25%;
-  max-width: 150px;
+  left: 40%;
+  top: 30%;
+  max-width: 200px;
   text-align: center;
   color: white;
   background: grey;
   border: 2px solid white;
   padding: 10px;
+  opacity: 0.9;
 
 }
 
