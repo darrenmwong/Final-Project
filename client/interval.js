@@ -11,7 +11,6 @@ if (Meteor.isClient) {
                    $('#alertDescription').append(des); 
                Meteor.call('alertsRemove', Alerts.findOne({id: user}));
             } else {
-                console.log('Nothing to Alert');
               }
         }, 8000);
     }

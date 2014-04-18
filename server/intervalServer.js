@@ -6,7 +6,6 @@
      try {
      Alerts.remove({_id: userid._id});       
      } catch(error) {
-     console.log(error);
      } 
   }
  }); 
