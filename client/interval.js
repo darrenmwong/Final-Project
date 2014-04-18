@@ -5,7 +5,6 @@ if (Meteor.isClient) {
             var user = Meteor.userId();
             var a = Alerts.findOne({id: user});
             if(a) {
-                console.log('Alerting');
                 des = a.description;
                 $('body').prepend(Template.alertProfile);
                    $('#alertDescription').append(des); 
