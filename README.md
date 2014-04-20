@@ -6,7 +6,7 @@ The project tracks real time the current locatino of your wifi/GPS and will auto
 
 Upcoming Features
 =========
-S3 upload
+S3 upload=
 Alert users information and S3 picture of the pet
 Contact
 GPS band for 3rd party software tracking
