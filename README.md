@@ -8,6 +8,7 @@ Upcoming Features
 =========
 
 -S3 upload
+=
 -Alert users information and S3 picture of the pet
 -Contact
 -GPS band for 3rd party software tracking
