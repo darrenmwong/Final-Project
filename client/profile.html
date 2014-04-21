@@ -6,15 +6,17 @@
       <input type="text" id="petName" placeholder="Wiggles" >
       <label for="Type">Type Of Pet</label>
       <input type="text" id="petType" placeholder="Dog" >
+      <label for="Contact">Contact Info</label>
+      <input type="text" id="profileContact" placeholder="Email Or Number">
 <br>
       <input type="submit" id="submit-profile" value="Submit" >
     </form>  
 {{#S3 callback="callbackFunction"}}
     <input type="file">
 {{/S3}}
-  <div class="profilePicture">
-     <img src=" {{picture}} "/>
-   </div>
+<br>
+
+     <img id="profilePicture" src=" {{picture}} "/>
 </div>
 
 

@@ -158,3 +158,9 @@ max-width: 140px;
   margin-left: -200%;
   
 }
+
+#profilePicture {
+  max-height: 100px;
+  opacity: 1.0;
+  padding-top: 15px;
+}

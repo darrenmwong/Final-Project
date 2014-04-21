@@ -1,6 +1,18 @@
 if (Meteor.isClient) {
 
+Template.alertTemplate.events({
+    
+    'click #alertSubmit' : function(e) {
+        e.preventDefault(); 
+     console.log('submitting alert')
+    $('#alertFormContainer').toggleClass('toggle_profile');
+    }
+});
+
+
   Template.mapPost.rendered = function() {
+    
+    // Template Alert Submit
     if (navigator.geolocation) { //Checks if browser supports geolocation
 
       var map,
