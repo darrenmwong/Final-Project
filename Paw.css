@@ -134,16 +134,23 @@ max-width: 140px;
 
 }
 
-#profileForm {
+#profile-page {
   z-index: 40;
-  position: absolute;
-  left: 40%;
+  position: fixed;
+  left: 0%;
   text-align: center;
-  top: 25%;
+  top: 0%;
   padding: 15px;
   background: grey;
   border: 1px solid white;
   color: white;
+  transition: .6s all ease;
+  height: 100%
+
 }
  
 
+.toggle_profile {
+  margin-left: -200%;
+  
+}

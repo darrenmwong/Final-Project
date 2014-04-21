@@ -2,7 +2,7 @@
 <div class="menu-border">
 <a href=# class="menu-toggle"><img src="http://i.imgur.com/8MVZndp.png"></a>
 </div>
-<div class="navBarContainer shift">
+<div class="navBarContainer">
   <nav>
     <ul class="nav center">
       {{#if currentUser}}
@@ -12,7 +12,7 @@
         <li><a href="#" id="contact">Contact</a></li>
         
       {{else}}
-        <li><a href="#" id="sign-up">{{> loginButtons}}</a></li>
+        <li><a href="#" id="sign-up">{{>loginButtons}}</a></li>
       {{/if}}
     </ul>
   </nav>

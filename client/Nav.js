@@ -54,25 +54,33 @@ if (Meteor.isClient) {
 
    Template.menu.events({
 
+    
     'click .menu-toggle' : function() {
         $(".navBarContainer").toggleClass('shift');
     },
 
-    'click #profile' : function() {
+   /* 'click #profile' : function() {
         if (document.getElementById("profile-page")) { 
 
             $('#profile-page').remove(); 
            }     
         else {
              console.log('render of profile');
-             $("body").prepend(Template.profile);
+             $("body").append(Template.profile);
                 $('#submit-profile').click(function(e) {
                     e.preventDefault();
                     
                 }); 
              }
-    },
+    }, */
     
+    'click #profile' : function() {
+        console.log('toggling');
+        $('#profile-page').toggleClass('toggle_profile');
+        
+    },
+
+
     'click #log-out' : function() {
         Meteor.logout(function(err) {
          if (err) {
