@@ -53,14 +53,12 @@ if (Meteor.isClient) {
     };
 
    Template.menu.events({
-
     
     'click .menu-toggle' : function() {
         $(".navBarContainer").toggleClass('shift');
     },
 
     'click #profile' : function() {
-        console.log('toggling');
         $('#profile-page').toggleClass('toggle_profile');
         
     },
