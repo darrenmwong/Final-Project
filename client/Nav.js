@@ -59,26 +59,15 @@ if (Meteor.isClient) {
         $(".navBarContainer").toggleClass('shift');
     },
 
-   /* 'click #profile' : function() {
-        if (document.getElementById("profile-page")) { 
-
-            $('#profile-page').remove(); 
-           }     
-        else {
-             console.log('render of profile');
-             $("body").append(Template.profile);
-                $('#submit-profile').click(function(e) {
-                    e.preventDefault();
-                    
-                }); 
-             }
-    }, */
-    
     'click #profile' : function() {
         console.log('toggling');
         $('#profile-page').toggleClass('toggle_profile');
         
     },
+    
+    'click #alert' : function() {
+        $('#alertFormContainer').toggleClass('toggle_profile');
+    }, 
 
 
     'click #log-out' : function() {
@@ -94,7 +83,7 @@ if (Meteor.isClient) {
     'click #contact' : function() {
     },
 
-    'click #alert' : function() {
+/*    'click #alert' : function() {
         if (document.getElementById('alert-form')) {
             $('#alert-form').remove();
         }
@@ -108,7 +97,7 @@ if (Meteor.isClient) {
  
         }
      }
-
+*/
 
   });
     

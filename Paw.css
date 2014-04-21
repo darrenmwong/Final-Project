@@ -96,14 +96,15 @@ padding-top: 30px;
 }
 .alertContainer {
    z-index: 5;
-  position: absolute;
-  left: 40%;
-  top: 25%;
+  position: fixed;
+  left: 0%;
+  top: 0%%;
   width: 150px;
   max-width: 150px;
   text-align: center;
   color: white;
   background: grey;
+  transition: .6s all ease;
   border: 2px solid white;
   padding: 10px;
 
@@ -113,17 +114,17 @@ padding-top: 30px;
   padding: 5px;
 }
 
-#alert-form {
+#alertFormContainer {
   z-index: 5;
-  position: absolute;
-  left: 40%;
-  top: 30%;
-  max-width: 200px;
+  position: fixed;
+  transition: .6s all ease;
+  left: 0%;
+  height: 100%;
+  top: 0%;
   text-align: center;
   color: white;
-  background: grey;
-  border: 2px solid white;
-  padding: 10px;
+  background: #333;
+  border-right: 2px solid white;
   opacity: 0.9;
 
 }
@@ -141,9 +142,10 @@ max-width: 140px;
   text-align: center;
   top: 0%;
   padding: 15px;
-  background: grey;
-  border: 1px solid white;
+  background: #333;
+  border-right: 1px solid white;
   color: white;
+  opacity: 0.9;
   transition: .6s all ease;
   height: 100%
 
