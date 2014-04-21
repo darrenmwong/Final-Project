@@ -65,8 +65,8 @@ if (Meteor.isClient) {
     
     'click #alert' : function() {
         $('#alertFormContainer').toggleClass('toggle_profile');
-    }, 
 
+    }, 
 
     'click #log-out' : function() {
         Meteor.logout(function(err) {
