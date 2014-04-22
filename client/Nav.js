@@ -59,12 +59,15 @@ if (Meteor.isClient) {
     },
 
     'click #profile' : function() {
+        $('#alertFormContainer').toggleClass('toggle_profile', true);
         $('#profile-page').toggleClass('toggle_profile');
         
     },
     
     'click #alert' : function() {
+        $('#profile-page').toggleClass('toggle_profile', true);
         $('#alertFormContainer').toggleClass('toggle_profile');
+    
 
     }, 
 
@@ -73,6 +76,9 @@ if (Meteor.isClient) {
          if (err) {
             //show error message
          } else {
+            $('#profile-page').toggleClass('toggle_profile', true);
+            $('#alertFormContainer').toggleClass('toggle_profile', true);
+            $('#alertFormContainer').css('margin-left', '-200%');
             //show alert that says logged out
          }
        }); 
