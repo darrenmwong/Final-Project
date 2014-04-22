@@ -21,7 +21,7 @@ Template.alertTemplate.events({
     'click #feedId' : function() {
         var that = this;
         console.log(this);
-        var info = Profile.findOne({id: that.id});  
+        var info = Alerts.findOne({description: that.description});  
         Meteor.call('feedClick', info, function(err,data) {
             if(err)
                 console.log(err);
@@ -39,6 +39,10 @@ Template.alertTemplate.events({
 
 
     'click #alertBack' : function() {
+        Meteor.call('feedFalse', function(err,data) {
+            if(err)
+                console.log(err)
+            });
         $('#alertDescription').css('height', '');
         $('.alertInfo').fadeOut('fast', function() {
             $('#fadeOut').show('slow');
@@ -55,7 +59,7 @@ Template.alertTemplate.alertFeed = function() {
 };
 
 Template.alertTemplate.alertDes = function() {
-         return Profile.find({click: true});
+         return Alerts.find({click: true});
  };
     
 

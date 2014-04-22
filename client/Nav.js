@@ -43,7 +43,8 @@ if (Meteor.isClient) {
         }; 
     }
     for(var i=0; i < UsersInR.length; i++) {
-       var a =  Alerts.insert({id: UsersInR[i], description: des, userId: Meteor.userId()})
+        console.log('users in range');
+       var a =  Alerts.insert({id: UsersInR[i], description: des, userId: Meteor.userId(), info: woot.info, picture: woot.picture})
     
     }
     

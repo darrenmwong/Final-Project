@@ -14,8 +14,13 @@ if (Meteor.isServer) {
  
         feedClick: function(data) {
                 console.log(data);
-         Profile.update({id: data.id}, {$set: {click: true}});
-        }
+         Alerts.update({description: data.description}, {$set: {click: true}});
+        },
+
+
+        feedFalse: function() {
+            Alerts.update({click: true}, {$set: {click: false}});
+     }
     }); 
 });
 
