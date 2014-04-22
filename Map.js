@@ -4,8 +4,11 @@ Template.alertTemplate.events({
     
     'click #alertSubmit' : function(e) {
         e.preventDefault();
-        Profile.update({_id: this._id}, {$set: {alerts: true}});
-        console.log(this._id);
+        Meteor.call('alertSave', function(err, data) {
+            if (err)
+                console.log(err);
+        });
+               console.log(this._id);
     $('#alertFormContainer').toggleClass('toggle_profile');
     }
 });
