@@ -10,8 +10,12 @@ if (Meteor.isServer) {
                console.log(data);
          Profile.update({id: Meteor.userId()}, {$set: {info: data}});
 
-        }
+        },
  
+        feedClick: function(data) {
+                console.log(data);
+         Profile.update({id: data.id}, {$set: {click: true}});
+        }
     }); 
 });
 

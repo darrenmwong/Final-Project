@@ -8,8 +8,10 @@ Template.alertTemplate.events({
         Meteor.call('alertSave', data, function(err, data) {
             if (err)
                 console.log(err);
+    
         });
-    $('#alertFormContainer').toggleClass('toggle_profile');
+    $('#alertDescription').val('');
+    $('#alertDescription').css('height', '');
     },
     
     'click #alertDescription' : function() {
@@ -18,15 +20,26 @@ Template.alertTemplate.events({
 
     'click #feedId' : function() {
         var that = this;
-        console.log(this);   
+        console.log(this);
         var info = Profile.findOne({id: that.id});  
-        console.log(info);
-        $('#fadeOut').fadeOut(1000, function() {
+        Meteor.call('feedClick', info, function(err,data) {
+            if(err)
+                console.log(err);
+            });
+        
+
+
+        $('#fadeOut').fadeOut(800, function() {
             $('.alertInfo').show('fast'); 
         });
+        
     },
 
+
+
+
     'click #alertBack' : function() {
+        $('#alertDescription').css('height', '');
         $('.alertInfo').fadeOut('fast', function() {
             $('#fadeOut').show('slow');
         });
@@ -40,3 +53,9 @@ Template.alertTemplate.alertFeed = function() {
     return Alerts.find({id: Meteor.userId()});
     
 };
+
+Template.alertTemplate.alertDes = function() {
+         return Profile.find({click: true});
+ };
+    
+

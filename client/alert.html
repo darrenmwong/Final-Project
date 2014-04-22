@@ -9,7 +9,7 @@
     {{/each}}
   </div>
   <div id="alert-form">
-    <form >
+    <form id="alert-form-id">
      <label for='desciption'> Description </label> 
       <input type='text' id='alertDescription'> 
 <br>
@@ -28,6 +28,11 @@
       <a href=#> back</a>
     </div>
     This is alert info a lot of stuff will be here but for now im going to just write stuff in here while i think about things so i can use a slide up function Jquery call? Maybe i'm not to sure yet but we will see!
+  
+    {{#each alertDes}}
+     <li> {{picture}}</li>
+     <li> {{id}} </li>
+    {{/each}}
   </div>
 </div>
 

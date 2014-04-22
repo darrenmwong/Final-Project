@@ -20,7 +20,6 @@ if (Meteor.isClient) {
 
     
   alertSubmit = function() {
-    console.log('alerting');
     var UsersInR = [];
     var distance = 0.402336; //.25 miles in KM
     var des = $('#alertDescription').val();
@@ -44,7 +43,7 @@ if (Meteor.isClient) {
         }; 
     }
     for(var i=0; i < UsersInR.length; i++) {
-       var a =  Alerts.insert({id: UsersInR[i], description: des})
+       var a =  Alerts.insert({id: UsersInR[i], description: des, userId: Meteor.userId()})
     
     }
     
@@ -78,7 +77,6 @@ if (Meteor.isClient) {
          } else {
             $('#profile-page').toggleClass('toggle_profile', true);
             $('#alertFormContainer').toggleClass('toggle_profile', true);
-            $('#alertFormContainer').css('margin-left', '-200%');
             //show alert that says logged out
          }
        }); 
