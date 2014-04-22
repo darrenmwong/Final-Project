@@ -161,6 +161,7 @@ max-width: 140px;
 
 #profilePicture {
   max-height: 100px;
+  max-width: 100px;
   opacity: 1.0;
   padding-top: 15px;
 }

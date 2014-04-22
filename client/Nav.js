@@ -39,8 +39,7 @@ if (Meteor.isClient) {
          var between = getDistanceBetween(centerlat, centerlng, lat, lng);
 // Checks if distance between is less then .25 mile radius
               if(between <= distance) {
-                  UsersInR.push(fetch[i].id);
-        }
+                  UsersInR.push(fetch[i].id); }
         }; 
     }
     for(var i=0; i < UsersInR.length; i++) {

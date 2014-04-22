@@ -3,8 +3,9 @@ if (Meteor.isClient) {
 Template.alertTemplate.events({
     
     'click #alertSubmit' : function(e) {
-        e.preventDefault(); 
-     console.log('submitting alert')
+        e.preventDefault();
+        Profile.update({_id: this._id}, {$set: {alerts: true}});
+        console.log(this._id);
     $('#alertFormContainer').toggleClass('toggle_profile');
     }
 });
@@ -50,7 +51,10 @@ Template.alertTemplate.events({
                         pos.coords.latitude,
                         pos.coords.longitude
                     ));
-            /*  var sunCircle = {
+            }
+            
+          /*  function circler() {
+              var sunCircle = {
                   strokeColor: "#19A3D1",
                   strokeOpacity: 0.8,
                   strokeWeight: 2,
@@ -61,8 +65,8 @@ Template.alertTemplate.events({
                   radius: 402.336 // in meters
              };
                   cityCircle = new google.maps.Circle(sunCircle)
-                 cityCircle.bindTo('center', currentPositionMarker, 'position'); */
-            }
+                 cityCircle.bindTo('center', currentPositionMarker, 'position'); 
+            } */
 
             function displayAndWatch(position) {
                 // set current position
@@ -87,7 +91,7 @@ Template.alertTemplate.events({
   //                  console.log(myLatlng);
   //                  Meteor.call('savePosition', this._id, {coords : myLatlng});
 
-            if(Profile.findOne({id: Meteor.userId()})) {
+              if(Profile.findOne({id: Meteor.userId()})) {
             
              Profile.update({_id: this._id}, {$set: { coords: myLatlng}});
 
@@ -126,6 +130,11 @@ Template.alertTemplate.events({
 
             $(document).ready(function() {
                 initLocationProcedure();
+
+                setInterval(function() {
+                console.log('CANGE');
+                watchCurrentPosition();
+               }, 20000); 
             });
 
 }
