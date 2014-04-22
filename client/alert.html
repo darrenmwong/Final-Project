@@ -27,11 +27,17 @@
     <div id="alertBack">
       <a href=#> back</a>
     </div>
-    This is alert info a lot of stuff will be here but for now im going to just write stuff in here while i think about things so i can use a slide up function Jquery call? Maybe i'm not to sure yet but we will see!
-  
     {{#each alertDes}}
-     <li> {{picture}}</li>
-     <li id="infoId"> {{info}} </li>
+    {{description}}  
+      <br> 
+   <img id="profilePicture" src=" {{picture}} "/>
+      <br>
+    {{info.name}}
+      <br>
+    {{info.type}}
+      <br>
+    {{info.contact}}
+
     {{/each}}
   </div>
 </div>
