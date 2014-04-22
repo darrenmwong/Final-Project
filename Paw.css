@@ -188,3 +188,13 @@ max-width: 140px;
   padding-top: 10px;
 }
 
+.alertInfo {
+  height:100%;
+  width: 275px;
+  position: fixed;
+  display: none;
+  transition: .6s all ease;
+
+
+}
+

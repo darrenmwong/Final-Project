@@ -14,7 +14,18 @@ Template.alertTemplate.events({
     
     'click #alertDescription' : function() {
     $('#alertDescription').css('height','85px');
-    }
+    },
+
+    'click #feedId' : function() {
+        var that = this;
+        console.log(this);   
+        var info = Profile.findOne({id: that.id});  
+        console.log(info);
+        $('#fadeOut').fadeOut(1000, function() {
+            $('.alertInfo').show('fast'); 
+        });
+        }
+
 
 });
 
