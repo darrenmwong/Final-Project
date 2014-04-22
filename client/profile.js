@@ -22,7 +22,6 @@ Template.profile.events({
         if (err) {
             console.log(err);
         } else {
-            console.log('saved');
         }
         });
     }

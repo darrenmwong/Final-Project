@@ -3,7 +3,7 @@ if (Meteor.isServer) {
     Meteor.methods({ 
         alertSave: function(data) {
          
-         Profile.update({_id: this._id}, {$set: {alerts: true}});
+         Profile.update({id: Meteor.userId}, {$set: {alerts: true}});
         },
         
         profileSave: function(data) {
