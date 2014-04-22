@@ -130,6 +130,7 @@ padding-top: 30px;
   color: white;
   background: #333;
   opacity: 0.8;
+  width: 275px;
 
 }
 
@@ -170,6 +171,9 @@ max-width: 140px;
 
 .alertFeed {
   padding: 5px;
+  overflow: scroll;
+  height: 65%;
+  border-bottom: 1px dotted white;
 }
 
 .feed {
@@ -179,6 +183,8 @@ max-width: 140px;
 }
 
 #alert-form {
-  margin-top: 75%;
+  position: fixed;
+  padding-left: 55px;
+  padding-top: 10px;
 }
 
