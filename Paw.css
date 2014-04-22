@@ -165,3 +165,12 @@ max-width: 140px;
   opacity: 1.0;
   padding-top: 15px;
 }
+
+.alertFeed {
+  padding: 5px;
+}
+
+.feed {
+  max-width: 275px;
+  padding: 10px;
+}

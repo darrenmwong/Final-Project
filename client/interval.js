@@ -1,4 +1,4 @@
-if (Meteor.isClient) {
+/*if (Meteor.isClient) {
     var interval = function() {
 
         setInterval(function() {
@@ -18,7 +18,7 @@ if (Meteor.isClient) {
 
 }
 
-
+*/
     
 
 
