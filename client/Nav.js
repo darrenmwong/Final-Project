@@ -20,6 +20,7 @@ if (Meteor.isClient) {
 
     
   alertSubmit = function() {
+    console.log('alerting');
     var UsersInR = [];
     var distance = 0.402336; //.25 miles in KM
     var des = $('#alertDescription').val();

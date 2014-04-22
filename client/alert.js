@@ -4,12 +4,17 @@ Template.alertTemplate.events({
         e.preventDefault();
         var data = $('#alertDescription').val();
             console.log(data);
-        Meteor.call('alertSave', function(err, data) {
+        alertSubmit();
+        Meteor.call('alertSave', data, function(err, data) {
             if (err)
                 console.log(err);
         });
-               console.log('ALERTING');
     $('#alertFormContainer').toggleClass('toggle_profile');
     }
 });
 
+
+Template.alertTemplate.alertFeed = function() {
+    return Alerts.find({id: Meteor.userId()});
+    
+};
