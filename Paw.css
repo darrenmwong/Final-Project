@@ -112,8 +112,10 @@ padding-top: 30px;
   }
 #alertDescription {
   padding: 5px;
-  height: 40px;
-  margin-left: 5px;
+  transition: .6s all ease;
+  height: 15px;
+  width: 200px;
+
 }
 
 #alertFormContainer {
@@ -173,4 +175,10 @@ max-width: 140px;
 .feed {
   max-width: 275px;
   padding: 10px;
+  border-bottom: 1px solid white;
 }
+
+#alert-form {
+  margin-top: 75%;
+}
+

@@ -10,7 +10,12 @@ Template.alertTemplate.events({
                 console.log(err);
         });
     $('#alertFormContainer').toggleClass('toggle_profile');
+    },
+    
+    'click #alertDescription' : function() {
+    $('#alertDescription').css('height','85px');
     }
+
 });
 
 
