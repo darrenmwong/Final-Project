@@ -24,7 +24,13 @@ Template.alertTemplate.events({
         $('#fadeOut').fadeOut(1000, function() {
             $('.alertInfo').show('fast'); 
         });
-        }
+    },
+
+    'click #alertBack' : function() {
+        $('.alertInfo').fadeOut('fast', function() {
+            $('#fadeOut').show('slow');
+        });
+    }
 
 
 });
