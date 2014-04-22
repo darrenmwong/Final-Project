@@ -1,10 +1,6 @@
-Template.profile.helpers({
-      picture:function(){
-        var user = Profile.findOne({id: Meteor.userId()}).picture;
-          return user;
-
-     }  
-});
+Template.profile.profilePicture = function() {
+        return Profile.find({id: Meteor.userId()});
+};
 
 
 Template.profile.events({
