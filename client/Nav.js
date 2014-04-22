@@ -79,6 +79,7 @@ if (Meteor.isClient) {
 
     'click #contact' : function() {
     },
+    
 
 /*    'click #alert' : function() {
         if (document.getElementById('alert-form')) {

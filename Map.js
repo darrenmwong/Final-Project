@@ -1,18 +1,5 @@
 if (Meteor.isClient) {
 
-Template.alertTemplate.events({
-    
-    'click #alertSubmit' : function(e) {
-        e.preventDefault();
-        Meteor.call('alertSave', function(err, data) {
-            if (err)
-                console.log(err);
-        });
-               console.log(this._id);
-    $('#alertFormContainer').toggleClass('toggle_profile');
-    }
-});
-
 
   Template.mapPost.rendered = function() {
     
@@ -133,11 +120,6 @@ Template.alertTemplate.events({
 
             $(document).ready(function() {
                 initLocationProcedure();
-
-                setInterval(function() {
-                console.log('CANGE');
-                watchCurrentPosition();
-               }, 20000); 
             });
 
 }
