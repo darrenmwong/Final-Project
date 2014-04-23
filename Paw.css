@@ -39,7 +39,13 @@ body {
 
 a:link {color:#FFFFFF;}      /* unvisited link */
 a:visited {color:#FFFFFF;}  /* visited link */
-a:hover {color:#008FB2;}  /* mouse over link */
+a:hover {
+  color:#008FB2; 
+  text-decoration: none;
+  cursor: auto;
+  list-style-type: none; 
+
+}  /* mouse over link */
 a:active {color:#008FB2;}  /* selected link */
 
 
@@ -65,7 +71,7 @@ a:active {color:#008FB2;}  /* selected link */
 }
 .menu-border {
   max-width: 48px;
-  z-index: 3;
+  z-index: 10;
   position: fixed;
   right: 0px;
   padding-left: 10px;
@@ -167,12 +173,22 @@ max-width: 140px;
   max-width: 250px;
   opacity: 1.0;
   padding-top: 15px;
+  border-radius: 25px;
 }
 
+
+#feedPicture {
+  max-height: 250px;
+  max-width: 250px;
+  opacity: 1.0;
+  padding-top: 15px;
+  border-radius: 25px;
+  
+}
 .alertFeed {
   padding: 5px;
   overflow: scroll;
-  height: 450px;
+  height: 400px;
   border-bottom: 1px dotted white;
 }
 
@@ -191,6 +207,7 @@ max-width: 140px;
 
 .alertInfo {
   height:100%;
+  overflow: scroll;
   width: 275px;
   position: fixed;
   display: none;
@@ -201,4 +218,28 @@ max-width: 140px;
 
 #alert-form-id {
   width: 275px;
+}
+
+#backFont {
+  font-size: 15px;
+  font-weight: 100;
+}
+#alertBack {
+ text-align: -webkit-left; 
+
+}
+
+
+#infoName {
+  text-align: left;
+  font-size: 30px;
+  padding-top: 10px;
+  padding-left: 30px;
+}
+
+#iconColor {
+  -webkit-filter: invert(100%); 
+  left:0px;
+   max-height: 30px;
+ padding-right: 5px;
 }

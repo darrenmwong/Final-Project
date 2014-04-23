@@ -1,5 +1,5 @@
 <template name="alertTemplate">
-<div id='alertFormContainer' class=''>
+<div id='alertFormContainer' class='toggle_profile'>
   <div id='fadeOut'>
   <br>
 
@@ -25,18 +25,17 @@
 
   <div class="alertInfo">
     <div id="alertBack">
-      <a href=#> back</a>
+      <a href=# id="backFont" ><img id="iconColor" src="http://i.imgur.com/IWGV4ss.png"/>Back</a>
     </div>
     {{#each alertDes}}
-    {{description}}  
-      <br> 
-   <img id="profilePicture" src=" {{picture}} "/>
+  <img id="feedPicture" src=" {{picture}} "/>
+    <br>
+  <div id="infoName"> {{info.name}}, <span style="font-weight: 100;">{{info.type}}</span></div>
       <br>
-    {{info.name}}
+  <div id="infoDescription">{{description}}</div>
       <br>
-    {{info.type}}
-      <br>
-    {{info.contact}}
+  <div id="infoContact">{{info.contact}}</div>
+
 
     {{/each}}
   </div>

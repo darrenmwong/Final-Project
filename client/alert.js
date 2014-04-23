@@ -20,7 +20,6 @@ Template.alertTemplate.events({
 
     'click #feedId' : function() {
         var that = this;
-        console.log(this);
         var info = Alerts.findOne({description: that.description});  
         Meteor.call('feedClick', info, function(err,data) {
             if(err)
@@ -34,8 +33,6 @@ Template.alertTemplate.events({
         });
         
     },
-
-
 
 
     'click #alertBack' : function() {

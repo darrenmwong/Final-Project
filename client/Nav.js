@@ -56,15 +56,20 @@ if (Meteor.isClient) {
     
     'click .menu-toggle' : function() {
         $(".navBarContainer").toggleClass('shift');
+        $("#alertFormContainer").toggleClass('toggle_profile', true);
+        $('#profile-page').toggleClass('toggle_profile', true);
     },
 
     'click #profile' : function() {
+        $(".navBarContainer").toggleClass('shift', true);
         $('#alertFormContainer').toggleClass('toggle_profile', true);
         $('#profile-page').toggleClass('toggle_profile');
+    
         
     },
     
     'click #alert' : function() {
+        $(".navBarContainer").toggleClass('shift', true);
         $('#profile-page').toggleClass('toggle_profile', true);
         $('#alertFormContainer').toggleClass('toggle_profile');
     
