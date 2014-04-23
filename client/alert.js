@@ -44,11 +44,26 @@ Template.alertTemplate.events({
         $('.alertInfo').fadeOut('fast', function() {
             $('#fadeOut').show('slow');
         });
-    }
+    },
 
+    'click #deleteButton' : function(e) {
+        e.preventDefault();
+        var info = $('#infoDescription').html();
+        console.log(info);
+        Meteor.call('deleteFeed',info, function(err,data) {
+            if(err)
+                console.log(err)
+            });
+         $('#alertDescription').css('height', '');
+         $('.alertInfo').fadeOut('fast', function() {
+            $('#fadeOut').show('slow');
+        });
+
+        }
 
 });
 
+    
 
 Template.alertTemplate.alertFeed = function() {
     return Alerts.find({id: Meteor.userId()});

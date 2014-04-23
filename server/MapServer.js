@@ -20,7 +20,13 @@ if (Meteor.isServer) {
 
         feedFalse: function() {
             Alerts.update({click: true}, {$set: {click: false}});
-     }
+        },
+        
+        deleteFeed: function(data) {
+            console.log(data); 
+            Alerts.remove({description: data});
+        
+        } 
     }); 
 });
 
