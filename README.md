@@ -8,7 +8,8 @@ Upcoming Features
 =========
 -Contact <br>
 -GPS band for 3rd party software tracking <br>
--Display of where the alert was sent on the map
--Display users updating real time(like waze)
--iioiosjjjjj
+-Display of where the alert was sent on the map <br>
+-Display users updating real time(like waze) <br>
+-Adding IOS and Android SDK
+
 
