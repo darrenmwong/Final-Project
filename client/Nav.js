@@ -24,15 +24,15 @@ if (Meteor.isClient) {
     var distance = 0.402336; //.25 miles in KM
     var des = $('#alertDescription').val();
 // finding user profile and getting the longitude latitude of the user
-    var woot = Profile.findOne({id: Meteor.userId()});
-    var centerlng = woot.coords.k;
-    var centerlat = woot.coords.A;
+    var usr = Profile.findOne({id: Meteor.userId()});
+    var centerlng = usr.coords.k;
+    var centerlat = usr.coords.A;
 // finding ALL users and putting them into an array using fetch
     var profile = Profile.find();
     var fetch = profile.fetch();
 // Looping through all profiles
     for(var i=0; i < fetch.length; i++) {
-        if(woot.id === fetch[i].id) {
+        if(usr.id === fetch[i].id) {
         } else {
          var lng = fetch[i].coords.k;
          var lat = fetch[i].coords.A;
@@ -44,7 +44,7 @@ if (Meteor.isClient) {
     }
     for(var i=0; i < UsersInR.length; i++) {
         console.log('users in range');
-       var a =  Alerts.insert({id: UsersInR[i], description: des, userId: Meteor.userId(), info: woot.info, picture: woot.picture})
+       var a =  Alerts.insert({id: UsersInR[i], description: des, userId: Meteor.userId(), info: usr.info, picture: usr.picture})
     
     }
     
