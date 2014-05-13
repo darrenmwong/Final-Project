@@ -6,9 +6,10 @@ The project tracks real time the current locatino of your wifi/GPS and will auto
 
 Upcoming Features
 =========
--S3 upload <br>
--Alert users information and S3 picture of the pet <br>
 -Contact <br>
 -GPS band for 3rd party software tracking <br>
+-Display of where the alert was sent on the map <br>
+-Display users updating real time(like waze) <br>
+-Adding IOS and Android SDK
 
 
