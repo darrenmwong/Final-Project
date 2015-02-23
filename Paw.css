@@ -1,8 +1,4 @@
-html {
-  height: 100%; 
-}
-
-body {
+html,body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -13,9 +9,6 @@ body {
   top: -2%;
   z-index: 1;
   position: relative;
-}
-
-#map-flow {
 }
 
 .navBarContainer {
@@ -48,22 +41,21 @@ a:hover {
 }  /* mouse over link */
 a:active {color:#008FB2;}  /* selected link */
 
+#login-buttons a, .accounts-dialog a {
+  text-decoration: none;
+  color: white;
+}
 
 .navBarContainer .navCenter,
 .navBarContainer .navCenter > li > a {
   text-decoration: none; 
   list-style-type: none; 
-  
-
 }
+
 .nav > li > a {
   font-size: 30px;
   padding: 16px;
-
-
-
 }
-
 
 .shift {
   margin-right: -200%;
@@ -78,12 +70,10 @@ a:active {color:#008FB2;}  /* selected link */
   padding-top: 0px;
 }
 
-
 .nav {
-
-padding-top: 30px;
-
+  padding-top: 30px;
 }
+
 .navbar .nav,
 .navbar .nav > li {
     float:none;
@@ -91,8 +81,8 @@ padding-top: 30px;
     *display:inline; /* ie7 fix */
     *zoom:1; /* hasLayout ie7 trigger */
     vertical-align: top;
-
 }
+
 .toggle_btn {
   position:fixed;
   top:25px;
@@ -100,6 +90,7 @@ padding-top: 30px;
   opacity:0.8;
   z-index: 5;
 }
+
 .alertContainer {
    z-index: 5;
   position: fixed;
@@ -113,9 +104,8 @@ padding-top: 30px;
   transition: .6s all ease;
   border: 2px solid white;
   padding: 10px;
+}
 
-
-  }
 #alertDescription {
   padding: 5px;
   transition: .6s all ease;
@@ -137,13 +127,10 @@ padding-top: 30px;
   background: #333;
   opacity: 0.8;
   width: 275px;
-
 }
 
 textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
-
-max-width: 140px;
-
+  max-width: 140px;
 }
 
 #profile-page {
@@ -159,13 +146,10 @@ max-width: 140px;
   opacity: 0.8;
   transition: .6s all ease;
   height: 100%
-
 }
- 
 
 .toggle_profile {
   margin-left: -200%;
-  
 }
 
 #profilePicture {
@@ -176,15 +160,14 @@ max-width: 140px;
   border-radius: 25px;
 }
 
-
 #feedPicture {
   max-height: 250px;
   max-width: 250px;
   opacity: 1.0;
   padding-top: 15px;
   border-radius: 25px;
-  
 }
+
 .alertFeed {
   padding: 5px;
   overflow: scroll;
@@ -212,8 +195,6 @@ max-width: 140px;
   position: fixed;
   display: none;
   transition: .6s all ease;
-
-
 }
 
 #alert-form-id {
@@ -224,11 +205,10 @@ max-width: 140px;
   font-size: 15px;
   font-weight: 100;
 }
+
 #alertBack {
  text-align: -webkit-left; 
-
 }
-
 
 #infoName {
   text-align: left;
@@ -240,6 +220,6 @@ max-width: 140px;
 #iconColor {
   -webkit-filter: invert(100%); 
   left:0px;
-   max-height: 30px;
- padding-right: 5px;
+  max-height: 30px;
+  padding-right: 5px;
 }
